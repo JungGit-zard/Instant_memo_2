@@ -34,12 +34,12 @@ const C = {
      추측 불가능한 긴 무작위 문자열(예: "kim-todo-x9f3k2q8")을 쓰고,
      정식 서비스 전에는 Firebase Auth 기반 규칙으로 교체할 것. */
 const FIREBASE_CONFIG = {
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "", // 예: "https://프로젝트명-default-rtdb.asia-southeast1.firebasedatabase.app"
-  projectId: "",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "",
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "",
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL || "",
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "",
 };
-const SYNC_ID = ""; // 기기 간 공유용 동기화 코드
+const SYNC_ID = import.meta.env.VITE_FIREBASE_SYNC_ID || ""; // 기기 간 공유용 동기화 코드
 const SYNC_ENABLED = Boolean(FIREBASE_CONFIG.databaseURL && SYNC_ID);
 const dayPath = (dk) => `rooms/${SYNC_ID}/days/${dk}`;
 const metaPath = (name) => `rooms/${SYNC_ID}/meta/${name}`;
