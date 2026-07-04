@@ -1,0 +1,18 @@
+{
+  "name": "Fable Todo",
+  "short_name": "Fable Todo",
+  "description": "Daily todo list synced with Firebase Realtime Database.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#eef1f6",
+  "theme_color": "#2f6bff",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
