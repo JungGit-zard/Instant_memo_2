@@ -40,7 +40,7 @@ const FIREBASE_CONFIG = {
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "",
 };
 const SYNC_ID = import.meta.env.VITE_FIREBASE_SYNC_ID || ""; // 기기 간 공유용 동기화 코드
-const SYNC_ENABLED = Boolean(FIREBASE_CONFIG.databaseURL && SYNC_ID);
+const SYNC_ENABLED = false; // storage-shim owns Firebase sync for every key.
 const dayPath = (dk) => `rooms/${SYNC_ID}/days/${dk}`;
 const metaPath = (name) => `rooms/${SYNC_ID}/meta/${name}`;
 const lastPushed = {}; // dateKey → 마지막으로 원격에 쓴 payload (자기 에코 무시용)

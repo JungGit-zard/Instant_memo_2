@@ -21,7 +21,9 @@ VITE_FIREBASE_PROJECT_ID=...
 VITE_FIREBASE_SYNC_ID=your-private-room-id
 ```
 
-Use the same `.env` values on PC and mobile builds. Todo day data is stored at:
+Use the same `.env` values on PC and mobile builds. When `VITE_FIREBASE_DATABASE_URL` and `VITE_FIREBASE_SYNC_ID` are set, every `window.storage` read/write goes through Firebase Realtime Database. Existing browser-local todo keys are uploaded to Firebase the first time they are read.
+
+Todo day data is stored at:
 
 ```text
 rooms/{VITE_FIREBASE_SYNC_ID}/days/{YYYY-MM-DD}
