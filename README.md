@@ -63,28 +63,30 @@ iPhone Safari:
 
 The installed icon uses the same Firebase Realtime Database data as the PC app when the same `.env` values are used before deployment.
 
-### Native APK/IPA Later: Capacitor
+### Native Android App
 
-Use this only when you need an Android APK/AAB or iOS App Store build.
+This repo includes a Capacitor Android project in `android/`.
 
-```bash
-npm install @capacitor/core @capacitor/cli
-npx cap init "Fable Todo" "com.jungsil.fabletodo" --web-dir=dist
-npm install @capacitor/android
-npm run build
-npx cap add android
-npx cap sync android
-npx cap open android
-```
-
-For iPhone native builds, run the iOS commands on macOS with Xcode:
+Update the Android app with the latest web build:
 
 ```bash
-npm install @capacitor/ios
-npm run build
-npx cap add ios
-npx cap sync ios
-npx cap open ios
+npm run mobile:sync
 ```
 
-Prefer the PWA route unless a store package is actually needed.
+Open it in Android Studio:
+
+```bash
+npm run mobile:open
+```
+
+Build a debug APK after Java and Android Studio are installed:
+
+```bash
+npm run android:debug
+```
+
+The debug APK will be created under `android/app/build/outputs/apk/debug/`.
+
+### Native iPhone App Later
+
+iPhone native builds require macOS and Xcode. Add Capacitor iOS there if an App Store or TestFlight build is needed.
