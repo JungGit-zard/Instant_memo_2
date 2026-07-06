@@ -63,28 +63,4 @@ iPhone Safari:
 
 The installed icon uses the same Firebase Realtime Database data as the PC app when the same `.env` values are used before deployment.
 
-### Native APK/IPA Later: Capacitor
-
-Use this only when you need an Android APK/AAB or iOS App Store build.
-
-```bash
-npm install @capacitor/core @capacitor/cli
-npx cap init "Fable Todo" "com.jungsil.fabletodo" --web-dir=dist
-npm install @capacitor/android
-npm run build
-npx cap add android
-npx cap sync android
-npx cap open android
-```
-
-For iPhone native builds, run the iOS commands on macOS with Xcode:
-
-```bash
-npm install @capacitor/ios
-npm run build
-npx cap add ios
-npx cap sync ios
-npx cap open ios
-```
-
-Prefer the PWA route unless a store package is actually needed.
+No APK is needed for this path. The phone icon opens the hosted web app directly.
